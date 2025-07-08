@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Login Skype Clone</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="logo">
+    <img src="assets/images/skype_logo.png" alt="Skype Logo">
+  </div>
+  <div class="login-box">
+    <h2>Conectează-te</h2>
+    <input type="text" id="username" placeholder="Numele tău">
+    <button onclick="login()">Intră</button>
+  </div>
+  <script>
+    function login() {
+      const user = document.getElementById('username').value.trim();
+      const loginSound = new Audio('assets/sounds/login_skype_desktop_mono.m4a');
+      loginSound.play();
+
+      setTimeout(() => {
+        if (user.toLowerCase() === 'bogdan') {
+          location.href = 'Utilizatori/Bogdan/index.html';
+        } else if (user.toLowerCase() === 'mitya') {
+          location.href = 'Utilizatori/Mitya/index.html';
+        } else {
+          alert('Utilizator necunoscut!');
+        }
+      }, 1000);
+    }
+  </script>
+</body>
+</html>
